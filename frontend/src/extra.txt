@@ -1,0 +1,133 @@
+// dashboard
+
+
+      <div className="card list-card border-warning mb-3">
+        <div className="card-header"><h3> item listName </h3></div>
+        <div className="container-fluid card-body-outer-container">
+          <div className="row card-row">
+            <div className="card-body card-body-container text-warning col-md-8">
+              <div className="card-body-text-inner-container">
+                <h5 className="card-title"> Total Questions: 500 </h5>
+                <p className="card-text"> this is one of my personal projects. i started to make this after i learnt web dev and i was inspired by those codeforces ladders and wanted to create a simple way of making all dsa list sheets available to you guys. i hope it helps. </p>
+              </div>
+            </div>
+            <div className="button-container col-md-4">
+              <div className="inner-button-container">
+                <button type="button" onclick="window.location.href = '/lists/<%=item._id%>/all/all'" value="THIS IS THE value" name="startButton" className="btn btn-success">Start solving</button>
+                {/* <form action="/reset-list-progress" method="POST"> */}
+                  {/* <input type="text" defaultValue="<%= item.questionSet %>" name="list" hidden /> */}
+                  <button type="submit" className="btn btn-danger" disabled>Reset progress</button>
+                {/* </form> */}
+                {/* <button type="button" className="btn btn-primary" disabled>About this list</button> */}
+                <div className='progress-border'>
+                    <div className="progress-bar"> <span className='progress-text'>0%</span> </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+
+        {/* // ! repeated code */}
+
+      <div className="card list-card border-warning mb-3">
+        <div className="card-header"><h3> item listName </h3></div>
+        <div className="container-fluid card-body-outer-container">
+          <div className="row card-row">
+            <div className="card-body card-body-container text-warning col-md-8">
+              <div className="card-body-text-inner-container">
+                <h5 className="card-title"> Total Questions: 500 </h5>
+                <p className="card-text"> this is one of my personal projects. i started to make this after i learnt web dev and i was inspired by those codeforces ladders and wanted to create a simple way of making all dsa list sheets available to you guys. i hope it helps. </p>
+              </div>
+            </div>
+            <div className="button-container col-md-4">
+              <div className="inner-button-container">
+                <button type="button" onclick="window.location.href = '/lists/<%=item._id%>/all/all'" value="THIS IS THE value" name="startButton" className="btn btn-success">Start solving</button>
+                
+                <form action="/reset-list-progress" method="POST">
+                  <input type="text" defaultValue="<%= item.questionSet %>" name="list" hidden />
+                  <button type="submit" className="btn btn-danger" disabled>Reset progress</button>
+                </form>
+
+
+                {/* <button type="button" className="btn btn-primary" disabled>About this list</button> */}
+                
+                <div className='progress-border'>
+                    <div className="progress-bar"> <span className='progress-text'>0%</span> </div>
+                </div>
+
+
+                
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      import React from 'react'
+
+const Base = () => {
+
+  const error = 0
+  const success = 0
+
+  const handleChange = () => {
+    console.log("hii");
+  }
+
+  const isAvailable = 1
+
+  const handleSubmit = () => {
+    console.log("henlo");
+  }
+
+  const updateTopic = () => {
+    <div className="mid-content">
+        <div className="forms-area">
+        <div className="form-group form-fields"> <h1>Add Topic</h1> </div>
+
+        <form>
+
+        {
+
+             success && <div className="form-group form-fields"> <div class="alert alert-success form-control" role="alert">
+                 {success}
+            </div>
+            </div>
+        }
+
+        {
+            error && <div className="form-group form-fields"> <div class="alert alert-danger form-control" role="alert">
+                {error}
+            </div>
+            </div>
+        }
+
+          <div className="form-group form-fields">
+            <input type="text" className="form-control"  onChange={handleChange("name")} name="listTitle" id="exampleFormControlInput1" placeholder="Topic Name" />
+          </div>
+          
+          <div className="form-fields">
+            <button type="submit" onClick={handleSubmit} disabled={!isAvailable} className="btn btn-success mb-2">Create Topic</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  }
+
+  return (
+    <h1>hii</h1>
+  )
+}
+
+export default Base

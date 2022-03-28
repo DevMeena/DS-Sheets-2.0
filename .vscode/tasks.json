@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "test",
+			"path": "frontend/",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test - frontend",
+			"detail": "react-scripts test"
+		}
+	]
+}
