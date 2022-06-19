@@ -1,21 +1,22 @@
 // require('dotenv').config()
 
-const express = require("express")
-const bodyParser = require("body-parser")
-const mysql = require("mysql")
-const cookieParser = require("cookie-parser")
-const cors = require("cors")
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 // ! My Routes
 
-const authRoutes = require("./routes/auth")
-const userRoutes = require("./routes/user")
-const listRoutes = require("./routes/lists")
-const topicRoutes = require("./routes/topics")
-const adminRoutes = require("./routes/admin")
+const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
+const listRoutes = require('./routes/lists');
+const topicRoutes = require('./routes/topics');
+const adminRoutes = require('./routes/admin');
+const forumRoutes = require('./routes/forum');
 
-const app = express()
-const port = process.env.PORT || 8000
+const app = express();
+const port = process.env.PORT || 8000;
 
 // ! DB Connection
 
@@ -30,17 +31,18 @@ const port = process.env.PORT || 8000
 
 // we use these as middleware
 
-app.use(bodyParser.json());    
-app.use(cookieParser());    
+app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(cors());
 
 // Routes
 
-app.use("/api", authRoutes)
-app.use("/api", userRoutes)
-app.use("/api", listRoutes)
-app.use("/api", adminRoutes)
-app.use("/api", topicRoutes)
+app.use('/api', authRoutes);
+app.use('/api', userRoutes);
+app.use('/api', listRoutes);
+app.use('/api', adminRoutes);
+app.use('/api', topicRoutes);
+app.use('/api', forumRoutes);
 
 // app.post("/api/signup",(req,res)=>{
 //     console.log(req.body);
@@ -64,5 +66,5 @@ app.use("/api", topicRoutes)
 // })
 
 app.listen(port, () => {
-    console.log(`App is running a ${port}`);
-})
+  console.log(`App is running a ${port}`);
+});
